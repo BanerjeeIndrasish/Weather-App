@@ -57,12 +57,11 @@
                 document.querySelector(".error").style.display = "none";
                 document.querySelector(".weather").style.display = "block";
                 var data = await response.json();
-                console.log(data);
                 document.querySelector(".city").innerHTML = data.name;
                 document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + " °c";
                 document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
                 document.querySelector(".wind").innerHTML = data.wind.speed + " kmph";
-                weatherIcon.src = "images/" + data.weather[0].main + ".png";
+                weatherIcon.src = "images/" + data.weather[0].main.toLowerCase() + ".png";
             }
         }
 
